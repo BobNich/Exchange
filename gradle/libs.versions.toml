@@ -94,7 +94,6 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 exchange-android-application = { id = "convention.kotlin-android-app", version = "unspecified" }
 exchange-android-library = { id = "convention.kotlin-android-library", version = "unspecified" }
 exchange-android-compose = { id = "convention.android-compose", version = "unspecified" }
-exchange-android-application-sign = { id = "convention.signing", version = "unspecified" }
 exchange-android-unit-test = { id = "convention.unit", version = "unspecified" }
 exchange-android-ui-test = { id = "convention.ui", version = "unspecified" }
 exchange-android-hilt = { id = "convention.hilt", version = "unspecified" }

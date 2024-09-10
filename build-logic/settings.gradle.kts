@@ -21,5 +21,4 @@ include("gradle-extension")
 
 include("kotlin")
 include("android")
-include("signing")
 include("test")
