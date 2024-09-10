@@ -29,3 +29,4 @@ dependencyResolutionManagement {
 includeBuild("build-logic")
 
 include(":app")
+include(":cloud")
