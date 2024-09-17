@@ -2,7 +2,7 @@
 # build core
 agp = "8.5.2"
 java = "17"
-kotlin = "2.0.0"
+kotlin = "2.0.20"
 kotlinLanguageVersion = "2.0"
 
 # build configuration
