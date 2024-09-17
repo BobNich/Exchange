@@ -29,5 +29,6 @@ dependencyResolutionManagement {
 includeBuild("build-logic")
 
 include(":app")
-include(":core:design-system")
+include(":design-system")
+include(":core")
 include(":cloud")
