@@ -1,4 +1,4 @@
-package com.exchange.cloud.core
+package com.exchange.core.data.cloud
 
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
@@ -27,18 +27,6 @@ interface ProvideOkHttpClientBuilder {
             return provideOkHttp
                 .httpClientBuilder()
                 .addInterceptor(interceptor.interceptor())
-        }
-    }
-
-    class AddPingInterval(
-        private val timeoutUnit: TimeUnit = TimeUnit.SECONDS,
-        private val timeout: Long = 5L,
-        private val provideOkHttp: ProvideOkHttpClientBuilder
-    ) : ProvideOkHttpClientBuilder {
-        override fun httpClientBuilder(): OkHttpClient.Builder {
-            return provideOkHttp
-                .httpClientBuilder()
-                .pingInterval(timeout, timeoutUnit)
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.exchange.cloud.core
+package com.exchange.core.data.cloud
 
 import okhttp3.logging.HttpLoggingInterceptor
 
@@ -7,7 +7,6 @@ interface ProvideLoggingInterceptor : ProvideInterceptor {
     abstract class Abstract(
         private val loggingLevel: HttpLoggingInterceptor.Level
     ) : ProvideLoggingInterceptor {
-
         override fun interceptor() = HttpLoggingInterceptor().apply {
             level = loggingLevel
         }

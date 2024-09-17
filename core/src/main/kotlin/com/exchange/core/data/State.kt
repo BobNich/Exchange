@@ -1,9 +1,9 @@
-package com.exchange.cloud.core
+package com.exchange.core.data
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-interface StateTunnel {
+interface State {
     interface Observe<T : Any> {
         fun observe(): StateFlow<T>
     }

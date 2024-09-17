@@ -1,6 +1,6 @@
 package com.exchange.cloud.websocket.internal
 
-import com.exchange.cloud.core.StateTunnel
+import com.exchange.core.data.State
 import com.exchange.cloud.websocket.core.WebSocketMessage
 import com.exchange.cloud.websocket.core.WebSocketState
 import okhttp3.Response
@@ -10,8 +10,8 @@ import okio.ByteString
 import javax.inject.Inject
 
 internal class WebSocketListener @Inject constructor(
-    private val observable: StateTunnel.Mutable<WebSocketState>
-) : WebSocketListener(), StateTunnel.Observe<WebSocketState> {
+    private val observable: State.Mutable<WebSocketState>
+) : WebSocketListener(), State.Observe<WebSocketState> {
 
     override fun observe() = observable.observe()
 

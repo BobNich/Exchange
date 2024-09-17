@@ -1,4 +1,4 @@
-package com.exchange.cloud.core
+package com.exchange.core.data.cloud
 
 interface ProvideBaseUrl {
 

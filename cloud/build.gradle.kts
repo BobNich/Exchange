@@ -8,8 +8,5 @@ android {
 }
 
 dependencies {
-    implementation(platform(libs.okhttp.bom))
-    implementation(libs.okhttp.core)
-    implementation(libs.okhttp.logging)
-    implementation(libs.kotlin.coroutines.android)
+    implementation(projects.core)
 }

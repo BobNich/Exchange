@@ -1,6 +1,6 @@
 package com.exchange.cloud.websocket.url
 
-import com.exchange.cloud.core.ProvideBaseUrl
+import com.exchange.core.data.cloud.ProvideBaseUrl
 
 class ReleaseUrlProvider : ProvideBaseUrl {
     companion object {
