@@ -1,7 +1,6 @@
 package com.exchange
 
 import com.android.build.gradle.BaseExtension
-import com.exchange.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -12,6 +11,7 @@ class AndroidUiTestConventionPlugin : Plugin<Project> {
                 add("androidTestImplementation", libs.androidx.test.runner)
                 add("androidTestImplementation", libs.androidx.test.rules)
                 add("androidTestImplementation", libs.androidx.ui.test.junit4)
+                add("androidTestImplementation", libs.androidx.espresso.core)
                 add("debugImplementation", libs.androidx.ui.test.manifest)
             }
 
