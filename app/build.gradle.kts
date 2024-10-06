@@ -44,5 +44,5 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
 
-    implementation(projects.core.designSystem)
+    implementation(projects.designSystem)
 }
