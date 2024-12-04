@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_name">Buy</string>
+    <string name="exchange_rate_text">1 %1$s = %2$s %3$s</string>
+    <string name="buy_button_text">Buy</string>
+    <string name="asset_receive_title">You receive</string>
+    <string name="asset_pay_title">You pay</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_market">Go to Market</string>
+</resources>

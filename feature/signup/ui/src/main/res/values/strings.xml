@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup_title_end">Exchange</string>
+    <string name="signup_title_start">"Create account on "</string>
+    <string name="signup_username_input_hint">Username</string>
+    <string name="signup_password_input_hint">Password</string>
+    <string name="signup_button_text">Sign up</string>
+    <string name="signup_success_message">🎉 Success! Log in to your profile now!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_back_to_login">Go back to login</string>
+</resources>
