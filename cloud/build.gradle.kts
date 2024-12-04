@@ -1,6 +1,7 @@
 plugins {
-    alias(libs.plugins.exchange.android.library)
-    alias(libs.plugins.exchange.android.hilt)
+    alias(libs.plugins.convention.android.library)
+    alias(libs.plugins.convention.android.hilt)
+    alias(libs.plugins.convention.kotlin.serialization)
 }
 
 android {
@@ -8,5 +9,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.core)
+    api(projects.core.network)
+    implementation(libs.retrofit.converter.json)
+    implementation(projects.core.account)
 }

@@ -1,13 +1,13 @@
 [versions]
 # build core
-agp = "8.5.2"
+agp = "8.7.2"
 java = "17"
 kotlin = "2.0.20"
-kotlinLanguageVersion = "2.0"
+kotlinLanguageVersion = "1.9"
 
 # build configuration
-compileSdk = "34"
-targetSdk = "34"
+compileSdk = "35"
+targetSdk = "35"
 minSdk = "24"
 buildTools = "34.0.0"
 
@@ -19,25 +19,34 @@ testRunner = "1.6.2"
 espressoCore = "3.6.1"
 
 # compose
-activityCompose = "1.9.2"
-composeBom = "2024.09.02"
+activityCompose = "1.9.3"
+composeBom = "2024.11.00"
 androidxComposeCompiler = "1.5.12"
 androidxComposeMaterial3Adaptive = "1.0.0"
-androidxComposeMaterial3AdaptiveNavigationSuite = "1.3.0"
+androidxComposeMaterial3AdaptiveNavigationSuite = "1.3.1"
+androidxComposeNavigation = "2.8.4"
 
 # android-ktx
-coreKtx = "1.13.1"
-lifecycleRuntimeKtx = "2.8.6"
+coreKtx = "1.15.0"
+coreSplash = "1.0.1"
+lifecycleRuntimeKtx = "2.8.7"
+androidxPreference = "1.2.1"
 
 # network
 okhttpBom = "4.12.0"
+retrofit = "2.11.0"
+
+# security
+androidxCredentials = "1.3.0"
+androidxSecurity = "1.1.0-alpha06"
 
 # other
-kotlinCoroutines = "1.8.0"
+kotlinCoroutines = "1.9.0"
+kotlinSerialization = "1.7.3"
 ksp = "2.0.20-1.0.25"
 room = "2.6.1"
-hilt = "2.51.1"
-hilt-extension = "1.2.0"
+hilt = "2.52"
+hilt-compiler = "1.2.0"
 
 [libraries]
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -47,7 +56,12 @@ room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", vers
 
 # android-ktx
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplash" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hilt-compiler" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-compiler" }
+androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "androidxPreference" }
 
 # compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -57,6 +71,7 @@ androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling-base = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
 
 # compose material
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
@@ -80,6 +95,8 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttpBom" }
 okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-json = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
 
 # cache
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
@@ -88,13 +105,18 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 
 # di
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
-hilt-extension-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hilt-extension" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 javax-inject = { group = "javax.inject", name = "javax.inject", version = "1" }
 
+# security
+androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "androidxCredentials" }
+androidx-credentials-play-services-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "androidxCredentials" }
+androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "androidxSecurity" }
+
 # other
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
 kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
-kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin" }
+kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -106,9 +128,13 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 room = { id = "androidx.room", version.ref = "room" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
-exchange-android-application = { id = "convention.kotlin-android-app", version = "unspecified" }
-exchange-android-library = { id = "convention.kotlin-android-library", version = "unspecified" }
-exchange-android-compose = { id = "convention.android-compose", version = "unspecified" }
-exchange-android-unit-test = { id = "convention.unit", version = "unspecified" }
-exchange-android-ui-test = { id = "convention.ui", version = "unspecified" }
-exchange-android-hilt = { id = "convention.hilt", version = "unspecified" }
+convention-android-application = { id = "convention.kotlin-android-app", version = "unspecified" }
+convention-android-library = { id = "convention.kotlin-android-library", version = "unspecified" }
+convention-android-compose = { id = "convention.android-compose", version = "unspecified" }
+convention-android-unit-test = { id = "convention.unit", version = "unspecified" }
+convention-android-ui-test = { id = "convention.ui", version = "unspecified" }
+convention-android-hilt = { id = "convention.hilt", version = "unspecified" }
+convention-android-room = { id = "convention.room", version = "unspecified" }
+convention-kotlin-serialization = { id = "convention.serialization", version = "unspecified" }
+convention-kotlin-jvm = { id = "convention.kotlin-jvm", version = "unspecified" }
+convention-kotlin-jvm-android = { id = "convention.kotlin-jvm-android", version = "unspecified" }

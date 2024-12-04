@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_password_visible">Password visible</string>
+    <string name="accessibility_password_not_visible">Password not visible</string>
+</resources>

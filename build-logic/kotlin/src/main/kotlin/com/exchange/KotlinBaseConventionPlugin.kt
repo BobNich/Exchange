@@ -1,6 +1,5 @@
 package com.exchange
 
-import com.exchange.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
@@ -14,14 +13,12 @@ class KotlinBaseConventionPlugin : Plugin<Project> {
             )
             tasks.withType(KotlinCompile::class.java).configureEach {
                 it.compilerOptions {
-                    allWarningsAsErrors.set(true)
                     languageVersion.set(kotlinVersion)
                     apiVersion.set(kotlinVersion)
 
                     freeCompilerArgs.set(
                         mutableListOf(
                             "-opt-in=kotlin.RequiresOptIn",
-                            "-progressive"
                         )
                     )
                 }

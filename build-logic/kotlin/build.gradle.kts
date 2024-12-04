@@ -15,6 +15,16 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        create("kotlin-jvm") {
+            id = "convention.kotlin-jvm"
+            implementationClass = "com.exchange.jvm.KotlinJvmPlugin"
+        }
+
+        create("kotlin-jvm-android") {
+            id = "convention.kotlin-jvm-android"
+            implementationClass = "com.exchange.jvm.KotlinJvmAndroidPlugin"
+        }
+
         create("ksp") {
             id = "convention.ksp"
             implementationClass = "com.exchange.KspConventionPlugin"

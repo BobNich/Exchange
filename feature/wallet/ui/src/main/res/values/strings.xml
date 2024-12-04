@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="main_screen_title">Wallet</string>
+    <string name="greeting_first_sentence">Hello, %1$s!</string>
+    <string name="greeting_second_sentence">What is for today?</string>
+    <string name="buy_button_text">Buy</string>
+    <string name="sell_button_text">Sell</string>
+    <!-- Assets -->
+    <string name="assets_screen_title">Assets</string>
+    <string name="show_all_assets_button_text">Show All</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_account">Go to Account</string>
+    <string name="accessibility_expand_assets">Go to Assets</string>
+</resources>

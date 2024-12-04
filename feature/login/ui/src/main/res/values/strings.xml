@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_title_start">"Log in or sign up to "</string>
+    <string name="login_title_end">Exchange</string>
+    <string name="login_username_input_hint">Enter your username</string>
+    <string name="login_password_input_hint">Enter your password</string>
+    <string name="login_sign_in_button">Sign in</string>
+    <string name="login_bottom_start">"Don’t have an account? "</string>
+    <string name="login_bottom_end">Sign up</string>
+    <string name="login_bottom_link">Go to Sign Up</string>
+    <string name="login_success_message">🎉 Success! Welcome aboard! 🚀</string>
+</resources>

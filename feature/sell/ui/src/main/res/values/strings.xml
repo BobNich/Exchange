@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_name">Sell</string>
+    <string name="sell_button_text">Sell</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_wallet">Go to Wallet</string>
+</resources>
