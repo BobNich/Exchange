@@ -1,14 +1,38 @@
 package com.exchange.feature.wallet.domain
 
 
-sealed interface GetUserAssetsActionState {
-    data object Progress : GetUserAssetsActionState
+interface GetUserWalletActionState {
+
+    fun <T> map(mapper: Mapper<T>): T
+
+    interface Mapper<T> {
+        fun progress(): T
+
+        fun success(wallet: UserWallet): T
+
+        fun failure(message: String): T
+    }
+
+
+    data object Progress : GetUserWalletActionState {
+        override fun <T> map(mapper: Mapper<T>): T {
+            return mapper.progress()
+        }
+    }
 
     data class Success(
-        val list: List<UserAsset>
-    ) : GetUserAssetsActionState
+        private val wallet: UserWallet
+    ) : GetUserWalletActionState {
+        override fun <T> map(mapper: Mapper<T>): T {
+            return mapper.success(wallet)
+        }
+    }
 
     data class Failure(
-        val message: String
-    ) : GetUserAssetsActionState
+        private val message: String
+    ) : GetUserWalletActionState {
+        override fun <T> map(mapper: Mapper<T>): T {
+            return mapper.failure(message)
+        }
+    }
 }

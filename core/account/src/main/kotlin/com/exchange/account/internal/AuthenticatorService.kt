@@ -10,7 +10,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.IBinder
 
-class AuthenticatorService : Service() {
+internal class AuthenticatorService : Service() {
 
     private lateinit var authenticator: Authenticator
 

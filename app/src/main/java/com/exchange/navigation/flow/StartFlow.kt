@@ -1,9 +1,14 @@
 package com.exchange.navigation.flow
 
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 
 import com.exchange.feature.login.ui.Login
@@ -15,32 +20,75 @@ import com.exchange.feature.signup.ui.SignupRoute
 
 fun NavGraphBuilder.startFlow(
     navController: NavController,
+    navigateSafely: (() -> Unit) -> Unit,
     onShowSnackbar: (String) -> Unit
 ) {
-    composable<Login> {
+    composable<Login>(
+        exitTransition = {
+            slideOutHorizontally(
+                targetOffsetX = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeOut(animationSpec = tween(100))
+        },
+        popEnterTransition = {
+            slideInHorizontally(
+                initialOffsetX = { -it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeIn(animationSpec = tween(100))
+        }
+    ) {
         LoginRoute(
             viewModel = hiltViewModel(),
             navigateToSignUp = {
-                navController.navigate(Signup)
+                navigateSafely {
+                    navController.navigate(Signup)
+                }
             },
             navigateToWallet = {
-                navController.navigate(
-                    route = Wallet,
-                    navOptions = NavOptions.Builder()
-                        .setPopUpTo(
-                            route = Login,
+                navigateSafely {
+                    navController.navigate(Wallet) {
+                        popUpTo(navController.graph.id) {
                             inclusive = true
-                        ).build()
-                )
+                            saveState = false
+                        }
+                    }
+                }
             },
             onShowSnackbar = onShowSnackbar
         )
     }
-    composable<Signup> {
+    composable<Signup>(
+        enterTransition = {
+            slideInHorizontally(
+                initialOffsetX = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeIn(animationSpec = tween(100))
+        },
+        exitTransition = {
+            slideOutHorizontally(
+                targetOffsetX = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeOut(animationSpec = tween(100))
+        },
+        popEnterTransition = {
+            slideInHorizontally(
+                initialOffsetX = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeIn(animationSpec = tween(100))
+        },
+        popExitTransition = {
+            slideOutHorizontally(
+                targetOffsetX = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeOut(animationSpec = tween(100))
+        }
+    ) {
         SignupRoute(
             viewModel = hiltViewModel(),
             navigateBack = {
-                navController.popBackStack()
+                navigateSafely {
+                    navController.popBackStack()
+                }
             }
         )
     }

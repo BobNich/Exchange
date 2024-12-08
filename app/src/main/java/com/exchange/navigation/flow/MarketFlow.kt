@@ -1,5 +1,13 @@
 package com.exchange.navigation.flow
 
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -14,32 +22,75 @@ import com.exchange.feature.sell.ui.SellRoute
 
 
 fun NavGraphBuilder.marketFlow(
-    navController: NavController
+    navController: NavController,
+    navigateSafely: (() -> Unit) -> Unit,
 ) {
-    composable<Market> {
+    composable<Market>(
+        enterTransition = {
+            slideInHorizontally(
+                initialOffsetX = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeIn(animationSpec = tween(100))
+        },
+        exitTransition = {
+            slideOutVertically(
+                targetOffsetY = { -it },
+                animationSpec = tween(durationMillis = 300)
+            ) + fadeOut(animationSpec = tween(100))
+        }
+    ) {
         MarketRoute(
             viewModel = hiltViewModel(),
-            navigateToBuy = {
-                // TODO(navigate with parameter $id)
+            navigateToBuy = { id ->
+                navigateSafely {
+                    navController.navigate(Buy(id))
+                }
             },
             navigateBack = {
-                navController.popBackStack()
+                navigateSafely {
+                    navController.popBackStack()
+                }
             }
         )
     }
-    composable<Buy> {
+    composable<Buy>(
+        enterTransition = {
+            slideInVertically(
+                initialOffsetY = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            )
+        },
+        exitTransition = {
+            slideOutVertically(
+                targetOffsetY = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            )
+        }
+    ) {
         BuyRoute(
             viewModel = hiltViewModel(),
             navigateBack = {
-                navController.popBackStack()
+                navigateSafely {
+                    navController.popBackStack()
+                }
             }
         )
     }
-    composable<Sell> {
+    composable<Sell>(
+        enterTransition = { EnterTransition.None },
+        exitTransition = {
+            slideOutVertically(
+                targetOffsetY = { -it },
+                animationSpec = tween(durationMillis = 300)
+            ) + fadeOut(animationSpec = tween(100))
+        }
+    ) {
         SellRoute(
             viewModel = hiltViewModel(),
             navigateBack = {
-                navController.popBackStack()
+                navigateSafely {
+                    navController.popBackStack()
+                }
             }
         )
     }

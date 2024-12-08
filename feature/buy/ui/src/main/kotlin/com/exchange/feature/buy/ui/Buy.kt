@@ -5,4 +5,4 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data object Buy : Screen
+data class Buy(val offerId: String) : Screen

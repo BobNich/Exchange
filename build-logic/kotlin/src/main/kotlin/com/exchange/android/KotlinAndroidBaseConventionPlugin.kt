@@ -14,15 +14,17 @@ class KotlinAndroidBaseConventionPlugin : Plugin<Project> {
         with(project) {
             plugins.apply("kotlin-android")
             plugins.apply(KotlinBaseConventionPlugin::class.java)
+            val javaTarget = JavaLanguageVersion.of(libs.versions.java.get())
+
             extensions.configure(KotlinAndroidProjectExtension::class.java) { kotlin ->
                 kotlin.jvmToolchain {
-                    it.languageVersion.set(JavaLanguageVersion.of(libs.versions.java.get()))
+                    it.languageVersion.set(javaTarget)
                 }
             }
 
             tasks.withType(KotlinCompile::class.java).configureEach {
                 it.compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_1_8)
+                    jvmTarget.set(JvmTarget.fromTarget(javaTarget.toString()))
                 }
             }
         }

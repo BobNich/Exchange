@@ -10,6 +10,8 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
+    api(libs.androidx.lifecycle.viewmodel.ktx)
+    api(libs.androidx.lifecycle.runtime.ktx)
 
     implementation(projects.designSystem)
 }

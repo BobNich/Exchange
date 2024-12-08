@@ -12,12 +12,10 @@ import androidx.compose.ui.unit.dp
 import com.exchange.designsystem.theme.ApplicationTheme
 import com.exchange.feature.settings.ui.content.component.Header
 import com.exchange.feature.settings.ui.content.component.PreferencesSection
-import com.exchange.feature.settings.ui.content.component.Profile
 
 
 @Composable
 fun SettingsScreenContent(
-    username: String,
     onLogoutClick: () -> Unit,
     onBackClicked: () -> Unit,
     modifier: Modifier = Modifier
@@ -26,7 +24,11 @@ fun SettingsScreenContent(
         modifier = modifier
             .fillMaxSize()
     ) {
-        Column {
+        Column(
+            modifier = Modifier.padding(
+                top = 20.dp
+            ),
+        ) {
             Header(
                 modifier = Modifier
                     .padding(
@@ -36,13 +38,6 @@ fun SettingsScreenContent(
                 onClick = {
                     onBackClicked()
                 }
-            )
-            Profile(
-                modifier = Modifier
-                    .padding(
-                        top = 36.dp
-                    ),
-                username = username
             )
             PreferencesSection(
                 modifier = Modifier
@@ -64,7 +59,6 @@ fun SettingsScreenContent(
 private fun PreviewSettingsScreenContentScreen() {
     ApplicationTheme {
         SettingsScreenContent(
-            username = "Bob",
             onBackClicked = {},
             onLogoutClick = {}
         )

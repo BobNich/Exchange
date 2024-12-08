@@ -49,7 +49,7 @@ fun Header(
         SingleText(
             text = JustText(
                 text = stringResource(
-                    id = R.string.screen_name
+                    id = R.string.market_screen_name
                 ),
                 style = MaterialTheme.typography.headlineMedium,
                 color = MaterialTheme.colorScheme.onBackground

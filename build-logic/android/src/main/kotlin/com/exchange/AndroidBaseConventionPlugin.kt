@@ -1,7 +1,6 @@
 package com.exchange
 
 import com.android.build.gradle.BaseExtension
-import com.exchange.libs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -20,8 +19,8 @@ class AndroidBaseConventionPlugin : Plugin<Project> {
                     }
 
                     compileOptions {
-                        it.sourceCompatibility = JavaVersion.VERSION_1_8
-                        it.targetCompatibility = JavaVersion.VERSION_1_8
+                        it.sourceCompatibility = JavaVersion.VERSION_17
+                        it.targetCompatibility = JavaVersion.VERSION_17
                     }
 
                     lintOptions { lint ->

@@ -12,6 +12,6 @@ android {
 dependencies {
     implementation(projects.core.ui)
     implementation(projects.designSystem)
-
     implementation(projects.feature.wallet.domain)
+    implementation(libs.lottie.compose)
 }

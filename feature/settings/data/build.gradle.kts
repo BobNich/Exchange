@@ -10,4 +10,5 @@ android {
 
 dependencies {
     implementation(projects.feature.settings.domain)
+    implementation(projects.core.account)
 }

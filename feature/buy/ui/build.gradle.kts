@@ -14,4 +14,6 @@ dependencies {
     implementation(projects.designSystem)
 
     implementation(projects.feature.buy.domain)
+
+    implementation(libs.androidx.navigation.compose)
 }

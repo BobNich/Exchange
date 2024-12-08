@@ -37,6 +37,7 @@ fun PreferencesSection(
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(30.dp))
+            .clickable(onClick = onLogoutClick)
             .background(
                 color = MaterialTheme.colorScheme.secondaryContainer
             )
@@ -44,8 +45,7 @@ fun PreferencesSection(
     ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .clickable(onClick = onLogoutClick),
+                .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(

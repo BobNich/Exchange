@@ -1,6 +1,6 @@
 package com.exchange.feature.signup.ui.di
 
-import com.exchange.core.ui.StateFlowWrapper
+import com.exchange.core.ui.Flowable
 import com.exchange.feature.signup.domain.SignupActionState
 import com.exchange.feature.signup.domain.SignupUseCase
 import com.exchange.feature.signup.ui.SignupUiState
@@ -16,20 +16,22 @@ import com.exchange.feature.signup.ui.interactor.username.UsernameUiState
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 internal object UiModule {
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     internal fun providesSignupInteractor(
         useCase: SignupUseCase,
         uiMapper: SignupActionState.Mapper<SignupUiState>,
-        observable: StateFlowWrapper.Mutable<SignupUiState>
+        observable: Flowable.Mutable<SignupUiState>
     ): SignupInteractor<SignupUiState> {
         return SignupInteractor.Base(
             useCase = useCase,
@@ -39,23 +41,23 @@ internal object UiModule {
     }
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     internal fun providesSignupStateMapper(
     ): SignupActionState.Mapper<SignupUiState> {
         return SignupStateMapper()
     }
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     internal fun providesSignupObservable(
-    ): StateFlowWrapper.Mutable<SignupUiState> {
+    ): Flowable.Mutable<SignupUiState> {
         return SignupStateObservable()
     }
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     internal fun providesUpdateUsernameInteractor(
-        observable: StateFlowWrapper.Mutable<UsernameUiState>
+        observable: Flowable.Mutable<UsernameUiState>
     ): UpdateUsernameInteractor<UsernameUiState> {
         return UpdateUsernameInteractor.Base(
             observable = observable
@@ -63,16 +65,16 @@ internal object UiModule {
     }
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     internal fun providesUsernameObservable(
-    ): StateFlowWrapper.Mutable<UsernameUiState> {
+    ): Flowable.Mutable<UsernameUiState> {
         return UsernameObservable()
     }
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     internal fun providesUpdatePasswordInteractor(
-        observable: StateFlowWrapper.Mutable<PasswordUiState>
+        observable: Flowable.Mutable<PasswordUiState>
     ): UpdatePasswordInteractor<PasswordUiState> {
         return UpdatePasswordInteractor.Base(
             observable = observable
@@ -80,9 +82,9 @@ internal object UiModule {
     }
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     internal fun providesPasswordObservable(
-    ): StateFlowWrapper.Mutable<PasswordUiState> {
+    ): Flowable.Mutable<PasswordUiState> {
         return PasswordObservable()
     }
 }

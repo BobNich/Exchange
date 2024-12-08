@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.convention.kotlin.serialization)
     alias(libs.plugins.convention.android.unit.test)
     alias(libs.plugins.convention.android.ui.test)
+    alias(libs.plugins.convention.signing)
 }
 
 android {
@@ -25,7 +26,7 @@ android {
             applicationIdSuffix = ".debug"
         }
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -60,7 +61,9 @@ dependencies {
     implementation(projects.feature.wallet.ui)
     implementation(projects.feature.wallet.data)
     implementation(projects.feature.settings.ui)
+    implementation(projects.feature.settings.data)
     implementation(projects.feature.market.ui)
+    implementation(projects.feature.market.data)
     implementation(projects.feature.buy.ui)
     implementation(projects.feature.sell.ui)
 }

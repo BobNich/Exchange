@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 abstract class AbstractStateFlowWrapper<T : Any>(
     initialState: T
-) : StateFlowWrapper.Mutable<T> {
+) : Flowable.Mutable<T> {
 
     private val state = MutableStateFlow(initialState)
 

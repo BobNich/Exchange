@@ -1,5 +1,6 @@
 package com.exchange.feature.market.ui.content
 
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +15,7 @@ import com.exchange.designsystem.theme.ApplicationTheme
 import com.exchange.feature.market.domain.CryptoOffer
 import com.exchange.feature.market.ui.MarketUiState
 import com.exchange.feature.market.ui.content.component.Header
+import com.exchange.feature.market.ui.content.component.MarketProgress
 import com.exchange.feature.market.ui.content.component.OffersContent
 import com.exchange.feature.market.ui.content.preview.OffersListPreviewParameterProvider
 
@@ -29,7 +31,12 @@ fun MarketScreenContent(
         modifier = modifier
             .fillMaxSize()
     ) {
-        Column {
+        Column(
+            modifier = Modifier
+                .padding(
+                    top = 20.dp
+                )
+        ) {
             Header(
                 modifier = Modifier
                     .padding(
@@ -41,15 +48,22 @@ fun MarketScreenContent(
                 }
             )
 
-            when (uiState) {
-                is MarketUiState.Loading,
-                is MarketUiState.Failure -> Unit
+            AnimatedContent(
+                targetState = uiState,
+                label = "market-state-animation"
+            ) { state ->
+                when (state) {
+                    is MarketUiState.Loading,
+                    is MarketUiState.Failure -> {
+                        MarketProgress()
+                    }
 
-                is MarketUiState.Success -> {
-                    OffersContent(
-                        offers = uiState.offers,
-                        onBuyClick = onBuyClick
-                    )
+                    is MarketUiState.Success -> {
+                        OffersContent(
+                            offers = state.offers,
+                            onBuyClick = onBuyClick
+                        )
+                    }
                 }
             }
         }
