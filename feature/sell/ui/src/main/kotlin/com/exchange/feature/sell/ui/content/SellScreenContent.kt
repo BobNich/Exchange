@@ -21,7 +21,12 @@ fun SellScreenContent(
         modifier = modifier
             .fillMaxSize()
     ) {
-        Column {
+        Column(
+            modifier = Modifier
+                .padding(
+                    top = 20.dp
+                )
+        ) {
             Header(
                 modifier = Modifier
                     .padding(28.dp),

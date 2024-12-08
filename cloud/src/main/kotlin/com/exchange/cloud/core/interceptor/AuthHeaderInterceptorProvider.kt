@@ -11,8 +11,9 @@ class AuthHeaderInterceptorProvider(
 ) : ProvideInterceptor {
     override fun interceptor(): Interceptor {
         return HeaderInterceptor(
-            "Authorization",
+            "Authorization"
+        ) {
             "Bearer ${tokenProvider.provideToken()}"
-        )
+        }
     }
 }

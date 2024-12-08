@@ -1,6 +1,6 @@
 package com.exchange.feature.login.ui.interactor.username
 
-import com.exchange.core.ui.StateFlowWrapper
+import com.exchange.core.ui.Flowable
 import javax.inject.Inject
 
 interface UpdateUsernameInteractor<T : Any> {
@@ -10,7 +10,7 @@ interface UpdateUsernameInteractor<T : Any> {
     )
 
     class Base<T : Any> @Inject constructor(
-        private val observable: StateFlowWrapper.Mutable<UsernameUiState>,
+        private val observable: Flowable.Mutable<UsernameUiState>,
     ) : UpdateUsernameInteractor<T> {
         override fun update(text: String) {
             observable.update(

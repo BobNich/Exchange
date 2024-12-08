@@ -13,9 +13,18 @@ interface UserAccount {
         refreshToken: String
     )
 
+    fun updateTokens(
+        accessToken: String,
+        refreshToken: String
+    )
+
+    fun username(): String
+
     fun accessToken(): String
 
     fun refreshToken(): String
 
-    fun authenticated(): Flow<Boolean>
+    fun authenticated(): Boolean
+
+    fun authenticatedFlow(): Flow<Boolean>
 }

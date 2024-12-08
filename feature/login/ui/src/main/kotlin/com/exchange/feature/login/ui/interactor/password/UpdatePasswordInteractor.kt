@@ -1,6 +1,6 @@
 package com.exchange.feature.login.ui.interactor.password
 
-import com.exchange.core.ui.StateFlowWrapper
+import com.exchange.core.ui.Flowable
 import javax.inject.Inject
 
 interface UpdatePasswordInteractor<T : Any> {
@@ -10,7 +10,7 @@ interface UpdatePasswordInteractor<T : Any> {
     )
 
     class Base<T : Any> @Inject constructor(
-        private val observable: StateFlowWrapper.Mutable<PasswordUiState>,
+        private val observable: Flowable.Mutable<PasswordUiState>,
     ) : UpdatePasswordInteractor<T> {
         override fun update(text: String) {
             observable.update(

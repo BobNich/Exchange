@@ -1,6 +1,6 @@
 package com.exchange.feature.signup.ui.interactor.signup
 
-import com.exchange.core.ui.StateFlowWrapper
+import com.exchange.core.ui.Flowable
 import com.exchange.feature.signup.domain.SignupActionState
 import com.exchange.feature.signup.domain.SignupUseCase
 import com.exchange.feature.signup.domain.UserSignupForm
@@ -17,7 +17,7 @@ interface SignupInteractor<T : Any> {
     class Base<T : Any> @Inject constructor(
         private val useCase: SignupUseCase,
         private val uiMapper: SignupActionState.Mapper<T>,
-        private val observable: StateFlowWrapper.Mutable<T>
+        private val observable: Flowable.Mutable<T>
     ) : SignupInteractor<T> {
         override suspend fun signup(
             username: String,

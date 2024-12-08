@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="screen_name">Market</string>
+    <string name="market_screen_name">Market</string>
     <string name="offer_top_section_title">%1$s %2$s</string>
     <string name="offer_top_section_subtitle">Price per 1 %1$s</string>
     <string name="buy_button_text">Buy</string>

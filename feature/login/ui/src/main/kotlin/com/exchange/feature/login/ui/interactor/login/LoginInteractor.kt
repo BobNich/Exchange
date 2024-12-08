@@ -1,6 +1,6 @@
 package com.exchange.feature.login.ui.interactor.login
 
-import com.exchange.core.ui.StateFlowWrapper
+import com.exchange.core.ui.Flowable
 import com.exchange.feature.login.domain.LoginActionState
 import com.exchange.feature.login.domain.LoginUseCase
 import com.exchange.feature.login.domain.UserLoginForm
@@ -17,7 +17,7 @@ interface LoginInteractor<T : Any> {
     class Base<T : Any> @Inject constructor(
         private val useCase: LoginUseCase,
         private val uiMapper: LoginActionState.Mapper<T>,
-        private val observable: StateFlowWrapper.Mutable<T>
+        private val observable: Flowable.Mutable<T>
     ) : LoginInteractor<T> {
         override suspend fun login(
             username: String,

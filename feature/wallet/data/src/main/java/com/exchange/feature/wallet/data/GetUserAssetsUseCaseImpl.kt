@@ -1,22 +1,22 @@
 package com.exchange.feature.wallet.data
 
-import com.exchange.feature.wallet.domain.GetUserAssetsActionState
-import com.exchange.feature.wallet.domain.GetUserAssetsUseCase
-import com.exchange.feature.wallet.domain.UserAssetsRepository
+import com.exchange.feature.wallet.domain.GetUserWalletActionState
+import com.exchange.feature.wallet.domain.GetUserWalletUseCase
+import com.exchange.feature.wallet.domain.UserWalletRepository
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 
-internal class GetUserAssetsUseCaseImpl @Inject constructor(
-    private val repository: UserAssetsRepository
-) : GetUserAssetsUseCase {
+internal class GetUserWalletUseCaseImpl @Inject constructor(
+    private val repository: UserWalletRepository
+) : GetUserWalletUseCase {
     override suspend fun invoke() = flow {
-        emit(GetUserAssetsActionState.Progress)
-        val assets = repository.assets()
-        emit(GetUserAssetsActionState.Success(assets))
+        emit(GetUserWalletActionState.Progress)
+        val assets = repository.wallet()
+        emit(GetUserWalletActionState.Success(assets))
     }.catch { error ->
         val message = error.message ?: error.toString()
-        emit(GetUserAssetsActionState.Failure(message))
+        emit(GetUserWalletActionState.Failure(message))
     }
 }

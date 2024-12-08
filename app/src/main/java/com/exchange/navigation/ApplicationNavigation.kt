@@ -2,6 +2,8 @@ package com.exchange.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.exchange.core.ui.Screen
@@ -25,9 +27,31 @@ fun ApplicationNavigation(
     ) {
         startFlow(
             navController = navController,
-            onShowSnackbar = onShowSnackbar
+            onShowSnackbar = onShowSnackbar,
+            navigateSafely = { navigate ->
+                if (navController.lifecycleIsResumed()) {
+                    navigate()
+                }
+            }
         )
-        walletFlow(navController)
-        marketFlow(navController)
+        walletFlow(
+            navController = navController,
+            navigateSafely = { navigate ->
+                if (navController.lifecycleIsResumed()) {
+                    navigate()
+                }
+            }
+        )
+        marketFlow(
+            navController = navController,
+            navigateSafely = { navigate ->
+                if (navController.lifecycleIsResumed()) {
+                    navigate()
+                }
+            }
+        )
     }
 }
+
+private fun NavController.lifecycleIsResumed() =
+    this.currentBackStackEntry?.lifecycle?.currentState == Lifecycle.State.RESUMED

@@ -13,7 +13,7 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     userAccount: UserAccount
 ) : ViewModel() {
-    private val uiState = userAccount.authenticated().map {
+    private val uiState = userAccount.authenticatedFlow().map {
         MainActivityUiState.Success(it)
     }
         .stateIn(

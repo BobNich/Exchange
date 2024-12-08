@@ -39,6 +39,9 @@ fun BuyScreenContent(
             .background(
                 color = MaterialTheme.colorScheme.secondaryContainer
             )
+            .padding(
+                top = 20.dp
+            )
     ) {
         Header(
             modifier = Modifier

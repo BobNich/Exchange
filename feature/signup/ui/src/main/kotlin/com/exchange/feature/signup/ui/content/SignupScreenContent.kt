@@ -37,6 +37,7 @@ fun SignupScreenContent(
     Box(
         modifier = modifier
             .fillMaxSize()
+            .padding(top = 20.dp)
     ) {
         Header(
             modifier = Modifier

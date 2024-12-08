@@ -14,4 +14,5 @@ dependencies {
     implementation(projects.designSystem)
 
     implementation(projects.feature.market.domain)
+    implementation(libs.lottie.compose)
 }

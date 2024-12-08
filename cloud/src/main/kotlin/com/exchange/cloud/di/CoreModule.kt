@@ -1,8 +1,10 @@
 package com.exchange.cloud.di
 
+import com.exchange.cloud.BuildConfig
 import com.exchange.cloud.core.converter.JsonConverterFactory
 import com.exchange.cloud.core.error.HandleDomainError
 import com.exchange.cloud.core.error.HandleHttpError
+import com.exchange.cloud.service.DebugUrlProvider
 import com.exchange.cloud.service.ReleaseUrlProvider
 
 import com.exchange.core.network.HandleError
@@ -53,7 +55,11 @@ internal object CoreModule {
     @Singleton
     internal fun providesBaseUrlProvider(
     ): ProvideBaseUrl {
-        return ReleaseUrlProvider()
+        return if (BuildConfig.DEBUG) {
+            DebugUrlProvider()
+        } else {
+            ReleaseUrlProvider()
+        }
     }
 
 }

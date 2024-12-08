@@ -9,6 +9,8 @@
     <!-- Assets -->
     <string name="assets_screen_title">Assets</string>
     <string name="show_all_assets_button_text">Show All</string>
+    <string name="show_less_assets_button_text">Show Less</string>
+    <string name="no_assets_title">Your wallet is empty!</string>
     <!-- Accessibility -->
     <string name="accessibility_go_to_account">Go to Account</string>
     <string name="accessibility_expand_assets">Go to Assets</string>
