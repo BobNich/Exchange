@@ -1,5 +1,7 @@
 package com.exchange.feature.market.domain
 
+import com.exchange.core.domain.CryptoOffer
+
 
 interface GetCryptoOffersActionState {
 

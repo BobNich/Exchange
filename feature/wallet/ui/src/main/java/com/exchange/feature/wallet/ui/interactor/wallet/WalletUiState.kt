@@ -1,6 +1,6 @@
 package com.exchange.feature.wallet.ui.interactor.wallet
 
-import com.exchange.feature.wallet.domain.UserAsset
+import com.exchange.core.domain.UserAsset
 
 
 interface WalletUiState {

@@ -1,8 +1,8 @@
 package com.exchange.cloud.core.interceptor
 
 import com.exchange.core.network.HeaderInterceptor
-import com.exchange.core.network.ProvideToken
 import com.exchange.core.network.ProvideInterceptor
+import com.exchange.core.network.ProvideToken
 import okhttp3.Interceptor
 
 
@@ -13,7 +13,10 @@ class AuthHeaderInterceptorProvider(
         return HeaderInterceptor(
             "Authorization"
         ) {
-            "Bearer ${tokenProvider.provideToken()}"
+            val accessToken = runCatching {
+                tokenProvider.provideToken()
+            }.getOrNull()
+            "Bearer $accessToken"
         }
     }
 }

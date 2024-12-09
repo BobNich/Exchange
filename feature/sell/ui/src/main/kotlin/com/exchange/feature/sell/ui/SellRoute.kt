@@ -12,6 +12,13 @@ fun SellRoute(
     modifier: Modifier = Modifier
 ) {
     SellScreenContent(
-        onBackClicked = navigateBack
+        onBackClicked = navigateBack,
+        onValueChanged = {
+
+        },
+        onSellClick = {
+
+        },
+        enabled = false,
     )
 }

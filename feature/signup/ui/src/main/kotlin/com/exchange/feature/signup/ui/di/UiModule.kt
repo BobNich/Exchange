@@ -1,12 +1,16 @@
 package com.exchange.feature.signup.ui.di
 
+import com.exchange.core.ui.Eventable
 import com.exchange.core.ui.Flowable
+import com.exchange.core.ui.Resource
 import com.exchange.feature.signup.domain.SignupActionState
 import com.exchange.feature.signup.domain.SignupUseCase
 import com.exchange.feature.signup.ui.SignupUiState
 import com.exchange.feature.signup.ui.interactor.password.PasswordObservable
 import com.exchange.feature.signup.ui.interactor.password.PasswordUiState
 import com.exchange.feature.signup.ui.interactor.password.UpdatePasswordInteractor
+import com.exchange.feature.signup.ui.interactor.signup.GoBackChannelEventable
+import com.exchange.feature.signup.ui.interactor.signup.SignupChannelEventable
 import com.exchange.feature.signup.ui.interactor.signup.SignupInteractor
 import com.exchange.feature.signup.ui.interactor.signup.SignupStateMapper
 import com.exchange.feature.signup.ui.interactor.signup.SignupStateObservable
@@ -18,8 +22,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 
 @Module
@@ -31,12 +33,34 @@ internal object UiModule {
     internal fun providesSignupInteractor(
         useCase: SignupUseCase,
         uiMapper: SignupActionState.Mapper<SignupUiState>,
-        observable: Flowable.Mutable<SignupUiState>
-    ): SignupInteractor<SignupUiState> {
+        observable: Flowable.Mutable<SignupUiState>,
+        eventable: Eventable<SignupUiState, String>
+    ): SignupInteractor<SignupUiState, String> {
         return SignupInteractor.Base(
             useCase = useCase,
             uiMapper = uiMapper,
-            observable = observable
+            observable = observable,
+            eventable = eventable
+        )
+    }
+
+    @Provides
+    @ViewModelScoped
+    internal fun providesGoBackEventChannel(
+    ): Eventable<Unit, Unit> {
+        return GoBackChannelEventable()
+    }
+
+
+    @Provides
+    @ViewModelScoped
+    internal fun providesMessageEventChannel(
+        resource: Resource,
+        goBackEvent: Eventable<Unit, Unit>
+    ): Eventable<SignupUiState, String> {
+        return SignupChannelEventable(
+            resource = resource,
+            goBackEvent = goBackEvent
         )
     }
 

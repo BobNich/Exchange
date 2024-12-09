@@ -47,7 +47,7 @@ fun Header(
             modifier = Modifier.align(Alignment.Center),
             text = JustText(
                 text = stringResource(
-                    id = R.string.screen_name
+                    id = R.string.buy_screen_name
                 ),
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onBackground

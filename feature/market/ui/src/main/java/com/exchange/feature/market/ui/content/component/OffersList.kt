@@ -8,7 +8,7 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.exchange.feature.market.domain.CryptoOffer
+import com.exchange.core.domain.CryptoOffer
 
 
 @Composable
