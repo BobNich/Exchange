@@ -1,6 +1,7 @@
 package com.exchange.feature.market.ui.content.preview
 
-import com.exchange.feature.market.domain.CryptoOffer
+import com.exchange.core.domain.CryptoOffer
+
 
 object OffersPreviewParameterData {
 

@@ -1,5 +1,6 @@
 package com.exchange.feature.signup.ui.interactor.signup
 
+import com.exchange.core.ui.Eventable
 import com.exchange.core.ui.Flowable
 import com.exchange.feature.signup.domain.SignupActionState
 import com.exchange.feature.signup.domain.SignupUseCase
@@ -7,18 +8,19 @@ import com.exchange.feature.signup.domain.UserSignupForm
 import javax.inject.Inject
 
 
-interface SignupInteractor<T : Any> {
+interface SignupInteractor<Observe : Any, Event: Any> {
 
     suspend fun signup(
         username: String,
         password: String
     )
 
-    class Base<T : Any> @Inject constructor(
+    class Base<Observe : Any, Event: Any> @Inject constructor(
         private val useCase: SignupUseCase,
-        private val uiMapper: SignupActionState.Mapper<T>,
-        private val observable: Flowable.Mutable<T>
-    ) : SignupInteractor<T> {
+        private val uiMapper: SignupActionState.Mapper<Observe>,
+        private val observable: Flowable.Mutable<Observe>,
+        private val eventable: Eventable<Observe, Event>
+    ) : SignupInteractor<Observe, Event> {
         override suspend fun signup(
             username: String,
             password: String
@@ -29,7 +31,9 @@ interface SignupInteractor<T : Any> {
                     password = password
                 )
             ).collect { state ->
-                observable.update(state.map(uiMapper))
+                val mapped = state.map(uiMapper)
+                observable.update(mapped)
+                eventable.put(mapped)
             }
         }
     }

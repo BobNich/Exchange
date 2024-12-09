@@ -1,6 +1,5 @@
 package com.exchange.navigation.flow
 
-import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -77,7 +76,12 @@ fun NavGraphBuilder.marketFlow(
         )
     }
     composable<Sell>(
-        enterTransition = { EnterTransition.None },
+        enterTransition = {
+            slideInHorizontally(
+                initialOffsetX = { it },
+                animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+            ) + fadeIn(animationSpec = tween(100))
+        },
         exitTransition = {
             slideOutVertically(
                 targetOffsetY = { -it },

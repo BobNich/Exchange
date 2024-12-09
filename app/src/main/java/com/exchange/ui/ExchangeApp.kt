@@ -38,6 +38,7 @@ fun ExchangeApp(
                     snackbarHostState.showSnackbar(
                         message = message,
                         duration = Short,
+                        withDismissAction = true
                     )
                 }
             },

@@ -65,5 +65,7 @@ dependencies {
     implementation(projects.feature.market.ui)
     implementation(projects.feature.market.data)
     implementation(projects.feature.buy.ui)
+    implementation(projects.feature.buy.data)
     implementation(projects.feature.sell.ui)
+    implementation(projects.feature.sell.data)
 }

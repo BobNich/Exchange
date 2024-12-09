@@ -43,12 +43,19 @@ fun BuyScreenContent(
                 top = 20.dp
             )
     ) {
-        Header(
-            modifier = Modifier
-                .align(Alignment.TopCenter)
-                .padding(28.dp),
-            onBackClick = onBackClick
-        )
+        Column(
+            modifier = Modifier.padding(
+                top = 28.dp
+            )
+        ) {
+            Header(
+                modifier = Modifier
+                    .padding(
+                        horizontal = 20.dp
+                    ),
+                onBackClick = onBackClick
+            )
+        }
         Column(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
@@ -81,10 +88,7 @@ fun BuyScreenContent(
             BuyButton(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(
-                        vertical = 44.dp,
-                        horizontal = 20.dp
-                    ),
+                    .padding(20.dp),
                 onClick = onBuyClick,
                 enabled = enabled
             )

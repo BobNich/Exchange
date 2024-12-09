@@ -1,7 +1,7 @@
 package com.exchange.feature.wallet.ui.interactor.wallet
 
+import com.exchange.core.domain.UserWallet
 import com.exchange.feature.wallet.domain.GetUserWalletActionState
-import com.exchange.feature.wallet.domain.UserWallet
 import javax.inject.Inject
 
 
