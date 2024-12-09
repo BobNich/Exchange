@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 
 
 @Composable
-fun ReceiveAssetHint(
+fun AssetHint(
     from: String,
     to: String,
     code: String,

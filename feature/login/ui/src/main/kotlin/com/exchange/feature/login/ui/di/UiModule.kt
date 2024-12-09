@@ -1,9 +1,12 @@
 package com.exchange.feature.login.ui.di
 
+import com.exchange.core.ui.Eventable
 import com.exchange.core.ui.Flowable
+import com.exchange.core.ui.Resource
 import com.exchange.feature.login.domain.LoginActionState
 import com.exchange.feature.login.domain.LoginUseCase
 import com.exchange.feature.login.ui.LoginUiState
+import com.exchange.feature.login.ui.interactor.login.LoginChannelEventable
 import com.exchange.feature.login.ui.interactor.login.LoginInteractor
 import com.exchange.feature.login.ui.interactor.login.LoginStateMapper
 import com.exchange.feature.login.ui.interactor.login.LoginStateObservable
@@ -29,13 +32,23 @@ internal object UiModule {
     internal fun providesLoginInteractor(
         useCase: LoginUseCase,
         uiMapper: LoginActionState.Mapper<LoginUiState>,
-        observable: Flowable.Mutable<LoginUiState>
-    ): LoginInteractor<LoginUiState> {
+        observable: Flowable.Mutable<LoginUiState>,
+        eventable: Eventable<LoginUiState, String>
+    ): LoginInteractor<LoginUiState, String> {
         return LoginInteractor.Base(
             useCase = useCase,
             uiMapper = uiMapper,
-            observable = observable
+            observable = observable,
+            eventable = eventable
         )
+    }
+
+    @Provides
+    @ViewModelScoped
+    internal fun providesMessageEventChannel(
+        resource: Resource
+    ): Eventable<LoginUiState, String> {
+        return LoginChannelEventable(resource)
     }
 
     @Provides
@@ -47,7 +60,7 @@ internal object UiModule {
 
     @Provides
     @ViewModelScoped
-    internal fun providesSignupObservable(
+    internal fun providesLoginObservable(
     ): Flowable.Mutable<LoginUiState> {
         return LoginStateObservable()
     }

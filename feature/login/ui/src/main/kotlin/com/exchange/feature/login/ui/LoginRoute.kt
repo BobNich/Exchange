@@ -1,11 +1,10 @@
 package com.exchange.feature.login.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.exchange.core.ui.EventConsumer
 
 import com.exchange.feature.login.ui.content.LoginScreenContent
 
@@ -29,6 +28,12 @@ fun LoginRoute(
     val passwordUiState by viewModel
         .passwordUiState()
         .collectAsStateWithLifecycle()
+
+    EventConsumer(
+        channel = viewModel.toastEventChannel()
+    ) { message ->
+        onShowSnackbar(message)
+    }
 
     LoginScreenContent(
         uiState = uiState,

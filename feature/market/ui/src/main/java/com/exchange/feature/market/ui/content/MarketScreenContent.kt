@@ -10,9 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import com.exchange.core.domain.CryptoOffer
 
 import com.exchange.designsystem.theme.ApplicationTheme
-import com.exchange.feature.market.domain.CryptoOffer
 import com.exchange.feature.market.ui.MarketUiState
 import com.exchange.feature.market.ui.content.component.Header
 import com.exchange.feature.market.ui.content.component.MarketProgress

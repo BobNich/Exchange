@@ -1,6 +1,6 @@
 package com.exchange.feature.market.ui.interactor
 
-import com.exchange.feature.market.domain.CryptoOffer
+import com.exchange.core.domain.CryptoOffer
 import com.exchange.feature.market.domain.GetCryptoOffersActionState
 import com.exchange.feature.market.ui.MarketUiState
 import javax.inject.Inject

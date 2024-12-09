@@ -1,4 +1,4 @@
-package com.exchange.feature.wallet.domain
+package com.exchange.core.domain
 
 
 data class UserWallet(

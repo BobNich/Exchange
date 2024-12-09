@@ -11,4 +11,5 @@ android {
 dependencies {
     implementation(projects.cloud)
     implementation(projects.feature.buy.domain)
+    implementation(projects.core.account)
 }

@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 
 
 @Composable
-fun ReceiveAssetInvalidValue(
+fun AssetInvalidValue(
     value: String,
     code: String,
     modifier: Modifier = Modifier

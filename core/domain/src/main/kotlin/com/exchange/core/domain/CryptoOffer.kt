@@ -1,4 +1,4 @@
-package com.exchange.feature.market.domain
+package com.exchange.core.domain
 
 
 data class CryptoOffer(

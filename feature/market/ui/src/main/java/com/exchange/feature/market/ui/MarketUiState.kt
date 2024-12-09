@@ -1,6 +1,6 @@
 package com.exchange.feature.market.ui
 
-import com.exchange.feature.market.domain.CryptoOffer
+import com.exchange.core.domain.CryptoOffer
 
 interface MarketUiState {
 

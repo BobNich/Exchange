@@ -89,7 +89,8 @@ fun NavGraphBuilder.startFlow(
                 navigateSafely {
                     navController.popBackStack()
                 }
-            }
+            },
+            onShowSnackbar = onShowSnackbar
         )
     }
 }
