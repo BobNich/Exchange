@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.kotlin.coroutines.core)
+    api(projects.core.domain)
 }

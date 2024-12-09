@@ -2,6 +2,7 @@ package com.exchange.feature.login.ui
 
 import com.exchange.core.ui.BaseViewModel
 import com.exchange.core.ui.DispatchersList
+import com.exchange.core.ui.Eventable
 import com.exchange.core.ui.Flowable
 import com.exchange.feature.login.ui.interactor.login.LoginInteractor
 import com.exchange.feature.login.ui.interactor.password.PasswordUiState
@@ -13,12 +14,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val loginInteractor: LoginInteractor<LoginUiState>,
+    private val loginInteractor: LoginInteractor<LoginUiState, String>,
     private val updateUsernameAction: UpdateUsernameInteractor<UsernameUiState>,
     private val updatePasswordAction: UpdatePasswordInteractor<PasswordUiState>,
     private val featureUi: Flowable.Mutable<LoginUiState>,
     private val usernameState: Flowable.Mutable<UsernameUiState>,
     private val passwordState: Flowable.Mutable<PasswordUiState>,
+    private val eventChannel: Eventable<LoginUiState, String>,
     dispatchers: DispatchersList
 ) : BaseViewModel(dispatchers) {
 
@@ -27,6 +29,8 @@ class LoginViewModel @Inject constructor(
     fun usernameUiState() = usernameState.state()
 
     fun passwordUiState() = passwordState.state()
+
+    fun toastEventChannel() = eventChannel.read()
 
     fun updateUsername(value: String) =
         updateUsernameAction.update(value)

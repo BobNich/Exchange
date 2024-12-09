@@ -1,8 +1,8 @@
 package com.exchange.feature.wallet.data
 
 import com.exchange.cloud.service.user.ProfileCloudDataSource
-import com.exchange.feature.wallet.domain.UserAsset
-import com.exchange.feature.wallet.domain.UserWallet
+import com.exchange.core.domain.UserAsset
+import com.exchange.core.domain.UserWallet
 import com.exchange.feature.wallet.domain.UserWalletRepository
 import javax.inject.Inject
 

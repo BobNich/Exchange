@@ -16,7 +16,11 @@ interface GetUserWalletInteractor<T : Any> {
         private val observable: Flowable.Mutable<T>,
     ) : GetUserWalletInteractor<T> {
 
+        private var collecting = false
+
         override suspend fun get() {
+            if (collecting) return
+            collecting = true
             useCase().collect {
                 observable.update(it.map(uiMapper))
             }

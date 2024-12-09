@@ -30,7 +30,11 @@ internal object CoreModule {
     internal fun providesOkHttpClientBuilder(
     ): ProvideOkHttpClientBuilder {
         return ProvideOkHttpClientBuilder.AddInterceptor(
-            interceptor = ProvideLoggingInterceptor.Debug(),
+            interceptor = if (BuildConfig.DEBUG) {
+                ProvideLoggingInterceptor.Debug()
+            } else {
+                ProvideLoggingInterceptor.Release()
+            },
             provideOkHttp = ProvideOkHttpClientBuilder.Base()
         )
     }

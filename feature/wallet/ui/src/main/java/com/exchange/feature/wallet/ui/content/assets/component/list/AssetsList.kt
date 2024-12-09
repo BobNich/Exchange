@@ -11,8 +11,8 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.exchange.core.domain.UserAsset
 
-import com.exchange.feature.wallet.domain.UserAsset
 import com.exchange.feature.wallet.ui.R
 
 
