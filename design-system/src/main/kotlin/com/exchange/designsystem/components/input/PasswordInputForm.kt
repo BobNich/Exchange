@@ -69,7 +69,9 @@ fun PasswordInputForm(
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
             focusedContainerColor = MaterialTheme.colorScheme.secondary,
-            unfocusedContainerColor = MaterialTheme.colorScheme.secondary
+            unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
+            focusedTextColor = MaterialTheme.colorScheme.onSecondary,
+            unfocusedTextColor = MaterialTheme.colorScheme.onSecondary
         ),
         shape = RoundedCornerShape(8.dp),
         singleLine = true,
@@ -93,7 +95,8 @@ fun PasswordInputForm(
                         } else {
                             R.string.accessibility_password_not_visible
                         }
-                    )
+                    ),
+                    tint = MaterialTheme.colorScheme.onSecondary
                 )
             }
         }

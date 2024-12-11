@@ -27,8 +27,8 @@ fun RadialGradientBackground(
 
                 val radialGradient = Brush.radialGradient(
                     colors = listOf(
-                        Color(0xFFFF9C45).copy(alpha = 0.6f),
-                        Color(0xFFFFB800).copy(alpha = 0.5f),
+                        Color(0x99FF9C45),
+                        Color(0x80FFB800),
                     ),
                     center = center,
                     radius = radius,
