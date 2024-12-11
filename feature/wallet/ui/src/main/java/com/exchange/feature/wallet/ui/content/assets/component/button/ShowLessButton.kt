@@ -29,7 +29,7 @@ fun ShowLessButton(
                     id = R.string.show_less_assets_button_text
                 ),
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onBackground
+                color = MaterialTheme.colorScheme.onSecondary
             )
         )
     }

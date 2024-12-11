@@ -30,7 +30,7 @@ fun ShowAllButton(
                     id = R.string.show_all_assets_button_text
                 ),
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onBackground
+                color = MaterialTheme.colorScheme.onSecondary
             )
         )
     }
