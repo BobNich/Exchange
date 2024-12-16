@@ -24,6 +24,7 @@ android {
         debug {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
+            manifestPlaceholders["http"] = "true"
         }
         release {
             isMinifyEnabled = false
@@ -31,6 +32,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            manifestPlaceholders["http"] = "false"
         }
     }
     packaging {

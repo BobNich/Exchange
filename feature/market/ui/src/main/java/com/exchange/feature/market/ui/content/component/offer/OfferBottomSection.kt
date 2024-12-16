@@ -49,7 +49,7 @@ fun OfferBottomSection(
                     SingleText(
                         text = JustText(
                             text = stringResource(
-                                id = R.string.offer_bottom_section_available_title
+                                id = R.string.offer_bottom_section_limit_title
                             ),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onBackground
@@ -64,7 +64,7 @@ fun OfferBottomSection(
                             text = stringResource(
                                 R.string.offer_bottom_section_limits_value,
                                 limits,
-                                buyCode
+                                sellCode
                             ),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onBackground

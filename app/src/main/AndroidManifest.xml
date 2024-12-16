@@ -9,7 +9,7 @@
         android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
+        android:usesCleartextTraffic="${http}"
         android:theme="@style/Theme.Exchange.Start">
         <activity
             android:name=".MainActivity"

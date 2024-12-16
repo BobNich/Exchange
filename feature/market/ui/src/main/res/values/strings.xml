@@ -4,7 +4,6 @@
     <string name="offer_top_section_title">%1$s %2$s</string>
     <string name="offer_top_section_subtitle">Price per 1 %1$s</string>
     <string name="buy_button_text">Buy</string>
-    <string name="offer_bottom_section_available_title">Available</string>
     <string name="offer_bottom_section_available_value">%1$s %2$s</string>
     <string name="offer_bottom_section_limit_title">Limits</string>
     <string name="offer_bottom_section_limits_value">%1$s %2$s</string>
