@@ -27,7 +27,7 @@ import com.exchange.feature.sell.ui.content.component.SellButton
 @Composable
 fun SellScreenContent(
     onBackClicked: () -> Unit,
-    onValueChanged: (Double) -> Unit,
+    onValueChanged: (Float) -> Unit,
     onSellClick: () -> Unit,
     enabled: Boolean,
     modifier: Modifier = Modifier

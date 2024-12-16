@@ -11,15 +11,15 @@ import javax.inject.Inject
 
 
 class BuyUseCaseImpl @Inject constructor(
-    private val buyCloudDataSource: BuyCloudDataSource
+    private val cloudDataSource: BuyCloudDataSource
 ): BuyUseCase {
     override suspend fun invoke(
         request: BuyRequest
     ) = flow {
         emit(BuyActionState.Progress)
-        buyCloudDataSource.buy(
+        cloudDataSource.buy(
+            id = request.offerId,
             buy = BuyOffer(
-                id = request.offerId,
                 amount = request.amount
             )
         )

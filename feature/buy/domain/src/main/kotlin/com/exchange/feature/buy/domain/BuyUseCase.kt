@@ -4,5 +4,7 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface BuyUseCase {
-    suspend operator fun invoke(request: BuyRequest): Flow<BuyActionState>
+    suspend operator fun invoke(
+        request: BuyRequest
+    ): Flow<BuyActionState>
 }

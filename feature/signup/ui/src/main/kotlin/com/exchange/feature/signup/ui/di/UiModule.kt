@@ -51,7 +51,6 @@ internal object UiModule {
         return GoBackChannelEventable()
     }
 
-
     @Provides
     @ViewModelScoped
     internal fun providesMessageEventChannel(

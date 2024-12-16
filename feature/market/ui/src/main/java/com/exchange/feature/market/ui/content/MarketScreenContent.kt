@@ -23,7 +23,7 @@ import com.exchange.feature.market.ui.content.preview.OffersListPreviewParameter
 @Composable
 fun MarketScreenContent(
     uiState: MarketUiState,
-    onBuyClick: (id: String) -> Unit,
+    onBuyClick: (offer: CryptoOffer) -> Unit,
     onBackClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {

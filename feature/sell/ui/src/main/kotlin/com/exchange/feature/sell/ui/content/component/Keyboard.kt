@@ -18,7 +18,7 @@ import com.exchange.feature.sell.ui.R
 
 @Composable
 fun Keyboard(
-    onValueChange: (Double) -> Unit,
+    onValueChange: (Float) -> Unit,
     onFormattedValueChanged: (String) -> Unit,
     textStyle: TextStyle,
     itemShape: Shape,

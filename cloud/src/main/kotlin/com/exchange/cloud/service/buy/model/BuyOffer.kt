@@ -5,8 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class BuyOffer(
-    @SerialName("id")
-    private val id: String,
     @SerialName("amount")
     private val amount: Float,
 )

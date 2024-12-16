@@ -12,7 +12,7 @@ class NumberKeyboardData(
 
     fun value() = rawAmount
         .replace(",", ".")
-        .toDoubleOrNull() ?: 0.0
+        .toFloatOrNull() ?: 0f
 
     fun formattedValue(): String {
         val parts = rawAmount.split(decimalSeparator)
