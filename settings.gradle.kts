@@ -34,7 +34,6 @@ include(":core:domain")
 
 include(":core:network")
 include(":cloud")
-include(":cache")
 
 include(":core:account")
 
