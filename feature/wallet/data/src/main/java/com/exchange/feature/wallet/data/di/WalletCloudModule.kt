@@ -8,9 +8,9 @@ import com.exchange.cloud.core.interceptor.AuthHeaderInterceptorProvider
 import com.exchange.cloud.core.token.ProvideAccessToken
 import com.exchange.cloud.core.token.ProvideRefreshToken
 import com.exchange.cloud.di.CoreHttpClient
-import com.exchange.cloud.service.asset.PairsCloudDataSource
-import com.exchange.cloud.service.asset.PairsService
 import com.exchange.cloud.service.login.LoginCloudDataSource
+import com.exchange.cloud.service.user.ProfileCloudDataSource
+import com.exchange.cloud.service.user.ProfileService
 
 import com.exchange.core.network.HandleError
 import com.exchange.core.network.ProvideAuthenticator
@@ -65,8 +65,8 @@ internal object WalletCloudModule {
         provideBaseUrl: ProvideBaseUrl,
         converterFactory: ProvideConverterFactory,
         errorHandler: HandleError<Exception, Throwable>,
-    ): PairsCloudDataSource {
-        return PairsCloudDataSource.Base(
+    ): ProfileCloudDataSource {
+        return ProfileCloudDataSource.Base(
             service = ExchangeMakeService(
                 retrofitBuilder = ProvideRetrofitBuilder.Base(
                     httpClientBuilder = httpClientBuilder,
@@ -74,7 +74,7 @@ internal object WalletCloudModule {
                 ),
                 baseUrl = provideBaseUrl
             ).service(
-                clazz = PairsService::class.java
+                clazz = ProfileService::class.java
             ),
             errorHandler = errorHandler
         )

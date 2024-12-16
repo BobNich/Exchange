@@ -8,6 +8,8 @@
     <string name="offer_bottom_section_available_value">%1$s %2$s</string>
     <string name="offer_bottom_section_limit_title">Limits</string>
     <string name="offer_bottom_section_limits_value">%1$s %2$s</string>
+    <string name="no_offers_found_title">No offers available</string>
+    <string name="no_offers_found_title2">Check back later!</string>
     <!-- Accessibility -->
     <string name="accessibility_go_back_to_wallet">Go back to wallet</string>
 </resources>

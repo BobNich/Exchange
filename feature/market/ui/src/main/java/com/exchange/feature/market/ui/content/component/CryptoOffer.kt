@@ -23,7 +23,6 @@ fun Offer(
     price: String,
     buyCode: String,
     sellCode: String,
-    available: String,
     limits: String,
     modifier: Modifier = Modifier
 ) {
@@ -56,7 +55,6 @@ fun Offer(
             username = sellerUsername,
             buyCode = buyCode,
             sellCode = sellCode,
-            available = available,
             limits = limits
         )
     }

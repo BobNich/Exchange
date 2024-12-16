@@ -12,7 +12,6 @@ object OffersPreviewParameterData {
             price = 200f,
             sellAssetCode = "ETH",
             buyAssetCode = "BTC",
-            availableAmount = 200f,
             maximumAmount = 20f,
             minimumAmount = 1f
         ),
@@ -22,7 +21,6 @@ object OffersPreviewParameterData {
             price = 100f,
             sellAssetCode = "ETH",
             buyAssetCode = "BTC",
-            availableAmount = 200f,
             maximumAmount = 20f,
             minimumAmount = 1f
         ),
@@ -32,7 +30,6 @@ object OffersPreviewParameterData {
             price = 100f,
             sellAssetCode = "ETH",
             buyAssetCode = "BTC",
-            availableAmount = 200f,
             maximumAmount = 20f,
             minimumAmount = 1f
         ),

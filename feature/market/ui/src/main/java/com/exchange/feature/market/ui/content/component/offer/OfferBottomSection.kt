@@ -22,7 +22,6 @@ fun OfferBottomSection(
     username: String,
     buyCode: String,
     sellCode: String,
-    available: String,
     limits: String,
     modifier: Modifier = Modifier
 ) {
@@ -56,32 +55,10 @@ fun OfferBottomSection(
                             color = MaterialTheme.colorScheme.onBackground
                         )
                     )
-                    Spacer(modifier = Modifier.height(4.dp))
-                    SingleText(
-                        text = JustText(
-                            text = stringResource(
-                                id = R.string.offer_bottom_section_limit_title
-                            ),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onBackground
-                        )
-                    )
                 }
                 Column(
                     Modifier.weight(0.5f)
                 ) {
-                    SingleText(
-                        text = JustText(
-                            text = stringResource(
-                                R.string.offer_bottom_section_available_value,
-                                available,
-                                sellCode
-                            ),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onBackground
-                        )
-                    )
-                    Spacer(modifier = Modifier.height(4.dp))
                     SingleText(
                         text = JustText(
                             text = stringResource(
