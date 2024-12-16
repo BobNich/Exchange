@@ -20,7 +20,6 @@ import com.exchange.feature.market.ui.R
 @Composable
 fun OfferBottomSection(
     username: String,
-    buyCode: String,
     sellCode: String,
     limits: String,
     modifier: Modifier = Modifier

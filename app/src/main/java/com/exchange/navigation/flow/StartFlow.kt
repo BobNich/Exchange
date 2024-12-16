@@ -13,7 +13,6 @@ import androidx.navigation.compose.composable
 
 import com.exchange.feature.login.ui.Login
 import com.exchange.feature.login.ui.LoginRoute
-import com.exchange.feature.wallet.ui.Wallet
 import com.exchange.feature.signup.ui.Signup
 import com.exchange.feature.signup.ui.SignupRoute
 
@@ -42,16 +41,6 @@ fun NavGraphBuilder.startFlow(
             navigateToSignUp = {
                 navigateSafely {
                     navController.navigate(Signup)
-                }
-            },
-            navigateToWallet = {
-                navigateSafely {
-                    navController.navigate(Wallet) {
-                        popUpTo(navController.graph.id) {
-                            inclusive = true
-                            saveState = false
-                        }
-                    }
                 }
             },
             onShowSnackbar = onShowSnackbar

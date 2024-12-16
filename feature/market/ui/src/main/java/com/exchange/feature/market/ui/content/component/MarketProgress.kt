@@ -24,6 +24,7 @@ fun MarketProgress(
         iterations = LottieConstants.IterateForever,
     )
     LottieAnimation(
+        modifier = modifier,
         composition = composition,
         progress = { progress },
     )

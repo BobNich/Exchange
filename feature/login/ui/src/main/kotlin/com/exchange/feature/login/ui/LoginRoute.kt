@@ -13,7 +13,6 @@ import com.exchange.feature.login.ui.content.LoginScreenContent
 fun LoginRoute(
     viewModel: LoginViewModel,
     navigateToSignUp: () -> Unit,
-    navigateToWallet: () -> Unit,
     onShowSnackbar: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {

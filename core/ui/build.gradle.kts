@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.convention.android.library)
     alias(libs.plugins.convention.android.compose)
-    alias(libs.plugins.convention.kotlin.serialization)
 }
 
 android {
@@ -9,10 +8,10 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.javax.inject)
+    api(libs.androidx.core.ktx)
     api(libs.androidx.lifecycle.viewmodel.ktx)
     api(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.javax.inject)
 
     implementation(projects.designSystem)
 }

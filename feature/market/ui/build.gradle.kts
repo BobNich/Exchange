@@ -12,7 +12,6 @@ android {
 dependencies {
     implementation(projects.core.ui)
     implementation(projects.designSystem)
-
     implementation(projects.feature.market.domain)
     implementation(libs.lottie.compose)
 }

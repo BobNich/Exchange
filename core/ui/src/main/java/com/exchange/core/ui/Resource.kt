@@ -1,7 +1,6 @@
 package com.exchange.core.ui
 
 import android.content.Context
-import android.content.res.Resources
 import androidx.annotation.StringRes
 import javax.inject.Inject
 
