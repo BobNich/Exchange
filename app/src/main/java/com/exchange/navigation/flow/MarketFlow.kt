@@ -22,6 +22,7 @@ import com.exchange.feature.sell.ui.SellRoute
 
 fun NavGraphBuilder.marketFlow(
     navController: NavController,
+    onShowSnackbar: (String) -> Unit,
     navigateSafely: (() -> Unit) -> Unit,
 ) {
     composable<Market>(
@@ -40,9 +41,18 @@ fun NavGraphBuilder.marketFlow(
     ) {
         MarketRoute(
             viewModel = hiltViewModel(),
-            navigateToBuy = { id ->
+            navigateToBuy = { offer ->
                 navigateSafely {
-                    navController.navigate(Buy(id))
+                    navController.navigate(
+                        Buy(
+                            offerId = offer.id,
+                            price = offer.price,
+                            sellCode = offer.sellAssetCode,
+                            buyCode = offer.buyAssetCode,
+                            minimumAmount = offer.minimumAmount,
+                            maximumAmount = offer.maximumAmount
+                        )
+                    )
                 }
             },
             navigateBack = {
@@ -72,7 +82,8 @@ fun NavGraphBuilder.marketFlow(
                 navigateSafely {
                     navController.popBackStack()
                 }
-            }
+            },
+            onShowSnackbar = onShowSnackbar
         )
     }
     composable<Sell>(

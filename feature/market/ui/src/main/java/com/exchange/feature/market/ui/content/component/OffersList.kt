@@ -22,7 +22,7 @@ import com.exchange.feature.market.ui.R
 @Composable
 fun OffersContent(
     offers: List<CryptoOffer>,
-    onBuyClick: (id: String) -> Unit,
+    onBuyClick: (offer: CryptoOffer) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -76,7 +76,7 @@ fun NoOffersAvailable(
 @Composable
 fun OffersList(
     offers: List<CryptoOffer>,
-    onBuyClick: (id: String) -> Unit,
+    onBuyClick: (offer: CryptoOffer) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -95,7 +95,7 @@ fun OffersList(
                     Offer(
                         modifier = Modifier
                             .padding(bottom = 12.dp),
-                        onBuyClick = { onBuyClick(offerId) },
+                        onBuyClick = { onBuyClick(offer) },
                         sellerUsername = offer.sellerUsername,
                         price = offer.price.toString(),
                         buyCode = offer.buyAssetCode,

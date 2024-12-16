@@ -5,6 +5,7 @@
     <string name="buy_button_text">Buy</string>
     <string name="asset_receive_title">You receive</string>
     <string name="asset_pay_title">You pay</string>
+    <string name="success_buy_message">🎉 Success!</string>
     <!-- Accessibility -->
     <string name="accessibility_go_to_market">Go to Market</string>
 </resources>

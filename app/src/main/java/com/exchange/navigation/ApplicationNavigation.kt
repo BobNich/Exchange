@@ -44,6 +44,7 @@ fun ApplicationNavigation(
         )
         marketFlow(
             navController = navController,
+            onShowSnackbar = onShowSnackbar,
             navigateSafely = { navigate ->
                 if (navController.lifecycleIsResumed()) {
                     navigate()

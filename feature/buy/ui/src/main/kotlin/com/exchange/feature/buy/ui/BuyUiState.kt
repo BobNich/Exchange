@@ -1,19 +1,32 @@
 package com.exchange.feature.buy.ui
 
+import androidx.compose.runtime.Stable
+
 sealed interface BuyUiState {
 
-    fun isValid(): Boolean
+    data object Loading : BuyUiState
 
-    data object Invalid: BuyUiState {
-        override fun isValid() = false
-    }
+    data class Failure(
+        val message: String
+    ) : BuyUiState
 
-    data object Valid: BuyUiState {
-        override fun isValid() = true
-    }
-
-    data object Loading: BuyUiState {
-        override fun isValid() = true
-    }
+    data object Success : BuyUiState
 
 }
+
+@Stable
+data class Offer(
+    val price: Float,
+    val sellCode: String,
+    val buyCode: String,
+    val minimum: Float,
+    val maximum: Float
+)
+
+@Stable
+data class Session(
+    val value: Float,
+    val pay: String,
+    val valid: Boolean
+)
+

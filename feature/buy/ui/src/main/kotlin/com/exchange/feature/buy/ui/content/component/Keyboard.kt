@@ -18,8 +18,9 @@ import com.exchange.feature.buy.ui.R
 
 @Composable
 fun Keyboard(
-    onValueChange: (Double) -> Unit,
-    onFormattedValueChanged: (String) -> Unit,
+    maxValue: Float,
+    onFormattedValueChange: (String) -> Unit,
+    onValueChange: (Float) -> Unit,
     textStyle: TextStyle,
     itemShape: Shape,
     modifier: Modifier = Modifier
@@ -28,6 +29,8 @@ fun Keyboard(
         modifier = modifier
     ) {
         NumberKeyboard(
+            maxAllowedAmount = maxValue.toDouble(),
+            maxAllowedDecimals = 5,
             button = { number, listener ->
                 KeyboardItemNumber(
                     modifier = Modifier
@@ -69,8 +72,8 @@ fun Keyboard(
                 )
             },
             listener = { data ->
-                onFormattedValueChanged(data.formattedValue())
                 onValueChange(data.value())
+                onFormattedValueChange(data.formattedValue())
             }
         )
     }

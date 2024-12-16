@@ -5,6 +5,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.exchange.core.domain.CryptoOffer
 import com.exchange.feature.market.ui.content.MarketScreenContent
 import com.exchange.feature.market.ui.content.component.Refreshable
 
@@ -13,7 +14,7 @@ import com.exchange.feature.market.ui.content.component.Refreshable
 fun MarketRoute(
     viewModel: MarketViewModel,
     navigateBack: () -> Unit,
-    navigateToBuy: (id: String) -> Unit,
+    navigateToBuy: (offer: CryptoOffer) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val uiState by viewModel
