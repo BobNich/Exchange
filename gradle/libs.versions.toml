@@ -2,7 +2,7 @@
 # build core
 agp = "8.7.3"
 java = "17"
-kotlin = "2.0.21"
+kotlin = "2.1.0"
 kotlinLanguageVersion = "1.9"
 
 # build configuration
@@ -20,11 +20,9 @@ espressoCore = "3.6.1"
 
 # compose
 activityCompose = "1.9.3"
-composeBom = "2024.11.00"
+composeBom = "2024.12.01"
 androidxComposeCompiler = "1.5.12"
-androidxComposeMaterial3Adaptive = "1.0.0"
-androidxComposeMaterial3AdaptiveNavigationSuite = "1.3.1"
-androidxComposeNavigation = "2.8.4"
+androidxComposeNavigation = "2.8.5"
 lottieCompose = "6.6.1"
 
 # android-ktx
@@ -39,7 +37,7 @@ retrofit = "2.11.0"
 # other
 kotlinCoroutines = "1.9.0"
 kotlinSerialization = "1.7.3"
-ksp = "2.0.21-1.0.27"
+ksp = "2.1.0-1.0.29"
 room = "2.6.1"
 hilt = "2.53"
 hilt-compiler = "1.2.0"
@@ -75,11 +73,6 @@ lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "
 # compose material
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
-androidx-compose-material3-adaptive = { group = "androidx.compose.material3.adaptive", name = "adaptive", version.ref = "androidxComposeMaterial3Adaptive" }
-androidx-compose-material3-adaptive-layout = { group = "androidx.compose.material3.adaptive", name = "adaptive-layout", version.ref = "androidxComposeMaterial3Adaptive" }
-androidx-compose-material3-adaptive-navigation = { group = "androidx.compose.material3.adaptive", name = "adaptive-navigation", version.ref = "androidxComposeMaterial3Adaptive" }
-androidx-compose-material3-navigationSuite = { group = "androidx.compose.material3", name = "material3-adaptive-navigation-suite", version.ref = "androidxComposeMaterial3AdaptiveNavigationSuite" }
-androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class" }
 
 # testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -129,9 +122,7 @@ convention-android-compose = { id = "convention.android-compose", version = "uns
 convention-android-unit-test = { id = "convention.unit", version = "unspecified" }
 convention-android-ui-test = { id = "convention.ui", version = "unspecified" }
 convention-android-hilt = { id = "convention.hilt", version = "unspecified" }
-convention-android-room = { id = "convention.room", version = "unspecified" }
 convention-kotlin-serialization = { id = "convention.serialization", version = "unspecified" }
 convention-kotlin-jvm = { id = "convention.kotlin-jvm", version = "unspecified" }
-convention-kotlin-jvm-android = { id = "convention.kotlin-jvm-android", version = "unspecified" }
 convention-gradle-secrets = { id = "convention.gradle-secrets", version = "unspecified" }
 convention-signing = { id = "convention.signing", version = "unspecified" }

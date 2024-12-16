@@ -24,15 +24,15 @@ android {
         debug {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
-            manifestPlaceholders["http"] = "true"
+            manifestPlaceholders["http"] = true
         }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            manifestPlaceholders["http"] = "false"
+            manifestPlaceholders["http"] = false
         }
     }
     packaging {

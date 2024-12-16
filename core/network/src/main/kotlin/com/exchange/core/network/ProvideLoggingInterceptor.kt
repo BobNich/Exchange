@@ -4,7 +4,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 
 interface ProvideLoggingInterceptor : ProvideInterceptor {
 
-    abstract class Abstract constructor(
+    abstract class Abstract(
         private val loggingLevel: HttpLoggingInterceptor.Level
     ) : ProvideLoggingInterceptor {
 

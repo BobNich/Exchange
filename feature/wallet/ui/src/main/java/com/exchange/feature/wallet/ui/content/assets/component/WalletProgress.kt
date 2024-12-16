@@ -25,6 +25,7 @@ fun WalletProgress(
         iterations = LottieConstants.IterateForever,
     )
     LottieAnimation(
+        modifier = modifier,
         composition = composition,
         progress = { progress },
     )

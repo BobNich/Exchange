@@ -53,7 +53,6 @@ fun Offer(
         OfferBottomSection(
             modifier = Modifier.padding(20.dp),
             username = sellerUsername,
-            buyCode = buyCode,
             sellCode = sellCode,
             limits = limits
         )

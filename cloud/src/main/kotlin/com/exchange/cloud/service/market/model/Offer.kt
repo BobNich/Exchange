@@ -1,6 +1,5 @@
 package com.exchange.cloud.service.market.model
 
-import com.exchange.cloud.service.asset.model.Asset
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
