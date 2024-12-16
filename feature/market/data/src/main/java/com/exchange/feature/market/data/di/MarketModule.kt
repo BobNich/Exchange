@@ -1,6 +1,6 @@
 package com.exchange.feature.market.data.di
 
-import com.exchange.cloud.service.asset.PairsCloudDataSource
+import com.exchange.cloud.service.market.MarketCloudDataSource
 import com.exchange.feature.market.data.CryptoOffersRepositoryImpl
 import com.exchange.feature.market.data.GetCryptoOffersUseCaseImpl
 import com.exchange.feature.market.domain.CryptoOffersRepository
@@ -20,7 +20,7 @@ internal object MarketModule {
     @Provides
     @Singleton
     internal fun providesCryptoOffersRepository(
-        cloudDataSource: PairsCloudDataSource
+        cloudDataSource: MarketCloudDataSource
     ): CryptoOffersRepository {
         return CryptoOffersRepositoryImpl(
             cloudDataSource = cloudDataSource

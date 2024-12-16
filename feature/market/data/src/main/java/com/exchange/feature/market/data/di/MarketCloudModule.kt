@@ -9,8 +9,8 @@ import com.exchange.cloud.core.token.ProvideAccessToken
 import com.exchange.cloud.core.token.ProvideRefreshToken
 import com.exchange.cloud.di.CoreHttpClient
 import com.exchange.cloud.service.login.LoginCloudDataSource
-import com.exchange.cloud.service.user.ProfileCloudDataSource
-import com.exchange.cloud.service.user.ProfileService
+import com.exchange.cloud.service.market.MarketCloudDataSource
+import com.exchange.cloud.service.market.MarketService
 
 import com.exchange.core.network.HandleError
 import com.exchange.core.network.ProvideAuthenticator
@@ -65,8 +65,8 @@ internal object MarketCloudModule {
         provideBaseUrl: ProvideBaseUrl,
         converterFactory: ProvideConverterFactory,
         errorHandler: HandleError<Exception, Throwable>,
-    ): ProfileCloudDataSource {
-        return ProfileCloudDataSource.Base(
+    ): MarketCloudDataSource {
+        return MarketCloudDataSource.Base(
             service = ExchangeMakeService(
                 retrofitBuilder = ProvideRetrofitBuilder.Base(
                     httpClientBuilder = httpClientBuilder,
@@ -74,7 +74,7 @@ internal object MarketCloudModule {
                 ),
                 baseUrl = provideBaseUrl
             ).service(
-                clazz = ProfileService::class.java
+                clazz = MarketService::class.java
             ),
             errorHandler = errorHandler
         )

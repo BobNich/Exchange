@@ -7,7 +7,6 @@ data class CryptoOffer(
     val price: Float,
     val sellAssetCode: String,
     val buyAssetCode: String,
-    val availableAmount: Float,
     val minimumAmount: Float,
     val maximumAmount: Float
 ) {
@@ -26,9 +25,6 @@ data class CryptoOffer(
         }
         require(buyAssetCode.isNotEmpty()) {
             "Buy asset code cannot be empty"
-        }
-        require(availableAmount >= 0) {
-            "Available amount must be >= 0"
         }
         require(minimumAmount >= 0) {
             "Minimum amount must be >= 0"
