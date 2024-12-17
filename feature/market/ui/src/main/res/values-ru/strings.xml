@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="market_screen_name">Рынок</string>
+    <string name="offer_top_section_title">%1$s %2$s</string>
+    <string name="offer_top_section_subtitle">Цена за 1 %1$s</string>
+    <string name="buy_button_text">Купить</string>
+    <string name="offer_bottom_section_available_value">%1$s %2$s</string>
+    <string name="offer_bottom_section_limit_title">Лимиты</string>
+    <string name="offer_bottom_section_limits_value">%1$s %2$s</string>
+    <string name="no_offers_found_title">Нет доступных предложений</string>
+    <string name="no_offers_found_title2">Загляните позже!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_back_to_wallet">Вернуться к кошельку</string>
+</resources>

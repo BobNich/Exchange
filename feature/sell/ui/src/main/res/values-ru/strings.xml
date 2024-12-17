@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sell_screen_name">Продать</string>
+    <string name="sell_button_text">Продать</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_wallet">Перейти к кошельку</string>
+</resources>
