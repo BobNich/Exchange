@@ -30,7 +30,7 @@ fun Keyboard(
     ) {
         NumberKeyboard(
             maxAllowedAmount = maxValue.toDouble(),
-            maxAllowedDecimals = 3,
+            maxAllowedDecimals = 5,
             button = { number, listener ->
                 KeyboardItemNumber(
                     modifier = Modifier
