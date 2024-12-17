@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="main_screen_title">Кошелек</string>
+    <string name="greeting_first_sentence">Привет, %1$s!</string>
+    <string name="greeting_second_sentence">Что на сегодня?</string>
+    <string name="buy_button_text">Купить</string>
+    <string name="sell_button_text">Продать</string>
+    <!-- Assets -->
+    <string name="assets_screen_title">Активы</string>
+    <string name="show_all_assets_button_text">Показать все</string>
+    <string name="show_less_assets_button_text">Показать меньше</string>
+    <string name="no_assets_title">Ваш кошелек пуст!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_account">Перейти к аккаунту</string>
+    <string name="accessibility_expand_assets">Перейти к активам</string>
+</resources>

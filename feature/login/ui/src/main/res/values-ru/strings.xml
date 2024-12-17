@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_title_start">"Войдите в "</string>
+    <string name="login_title_end">Exchange</string>
+    <string name="login_username_input_hint">Введите имя пользователя</string>
+    <string name="login_password_input_hint">Введите пароль</string>
+    <string name="login_sign_in_button">Войти</string>
+    <string name="login_bottom_start">"Нет аккаунта? "</string>
+    <string name="login_bottom_end">Зарегистрируйтесь</string>
+    <string name="login_bottom_link">Перейти к регистрации</string>
+    <string name="login_success_message">🎉 Успех! Добро пожаловать! 🚀</string>
+</resources>

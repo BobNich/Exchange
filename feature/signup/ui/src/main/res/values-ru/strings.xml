@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup_title_end">Exchange</string>
+    <string name="signup_title_start">"Создать аккаунт на "</string>
+    <string name="signup_username_input_hint">Имя пользователя</string>
+    <string name="signup_password_input_hint">Пароль</string>
+    <string name="signup_button_text">Зарегистрироваться</string>
+    <string name="signup_success_message">🎉 Успех! Войдите в свой профиль!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_back_to_login">Вернуться ко входу</string>
+</resources>

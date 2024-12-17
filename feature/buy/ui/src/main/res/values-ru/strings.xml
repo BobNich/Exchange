@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy_screen_name">Купить</string>
+    <string name="exchange_rate_text">1 %1$s = %2$s %3$s</string>
+    <string name="buy_button_text">Купить</string>
+    <string name="asset_receive_title">Вы получаете</string>
+    <string name="asset_pay_title">Вы платите</string>
+    <string name="success_buy_message">🎉 Успех!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_market">Перейти на рынок</string>
+</resources>
