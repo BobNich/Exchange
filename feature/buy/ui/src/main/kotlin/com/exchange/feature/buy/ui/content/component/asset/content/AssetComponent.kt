@@ -1,9 +1,12 @@
 package com.exchange.feature.buy.ui.content.component.asset.content
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -36,24 +39,25 @@ fun AssetComponent(
             .background(color = color)
             .padding(20.dp)
     ) {
-        SingleText(
-            modifier = Modifier
-                .align(
-                    alignment = Alignment.CenterStart
-                ),
-            text = JustText(
-                text = title,
-                style = MaterialTheme.typography.titleSmall,
-                color = MaterialTheme.colorScheme.onSecondary
-            )
-        )
-        Box(
-            modifier = Modifier
-                .align(
-                    alignment = Alignment.CenterEnd
-                )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            content()
+            SingleText(
+                modifier = Modifier.weight(1f),
+                text = JustText(
+                    text = title,
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.onSecondary
+                )
+            )
+
+            Box(
+                modifier = Modifier
+                    .horizontalScroll(rememberScrollState())
+            ) {
+                content()
+            }
         }
     }
 }
