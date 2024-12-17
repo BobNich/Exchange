@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy_screen_name">Сатып алу</string>
+    <string name="exchange_rate_text">1 %1$s = %2$s %3$s</string>
+    <string name="buy_button_text">Сатып алу</string>
+    <string name="asset_receive_title">Сез алырсыз</string>
+    <string name="asset_pay_title">Сез түләрсез</string>
+    <string name="success_buy_message">🎉 Уңыш!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_market">Базарга күчү</string>
+</resources>

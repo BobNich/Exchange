@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_name">Профиль</string>
+    <string name="logout_setting_title">Чыгу</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_back_to_wallet">Акча янчыгына кирү</string>
+    <string name="accessibility_logout_icon">Чыгу иконасы</string>
+    <string name="accessibility_profile_image">Профиль рәсеме</string>
+</resources>
