@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="main_screen_title">ウォレット</string>
+    <string name="greeting_first_sentence">こんにちは、%1$s!</string>
+    <string name="greeting_second_sentence">今日は何をしますか？</string>
+    <string name="buy_button_text">購入</string>
+    <string name="sell_button_text">販売</string>
+    <!-- Assets -->
+    <string name="assets_screen_title">資産</string>
+    <string name="show_all_assets_button_text">すべて表示</string>
+    <string name="show_less_assets_button_text">少なく表示</string>
+    <string name="no_assets_title">ウォレットは空です！</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_account">アカウントへ移動</string>
+    <string name="accessibility_expand_assets">資産へ移動</string>
+</resources>

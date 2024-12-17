@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_title_start">"ログインするか、登録する "</string>
+    <string name="login_title_end">Exchange</string>
+    <string name="login_username_input_hint">ユーザー名を入力してください</string>
+    <string name="login_password_input_hint">パスワードを入力してください</string>
+    <string name="login_sign_in_button">ログイン</string>
+    <string name="login_bottom_start">"アカウントをお持ちでないですか？ "</string>
+    <string name="login_bottom_end">サインアップ</string>
+    <string name="login_bottom_link">サインアップに進む</string>
+    <string name="login_success_message">🎉 成功！ようこそ！🚀</string>
+</resources>

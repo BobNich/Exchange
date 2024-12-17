@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sell_screen_name">販売</string>
+    <string name="sell_button_text">販売</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_wallet">ウォレットに移動</string>
+</resources>
