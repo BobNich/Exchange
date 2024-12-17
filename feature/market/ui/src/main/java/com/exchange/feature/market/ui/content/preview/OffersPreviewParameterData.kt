@@ -13,7 +13,8 @@ object OffersPreviewParameterData {
             sellAssetCode = "ETH",
             buyAssetCode = "BTC",
             maximumAmount = 20f,
-            minimumAmount = 1f
+            minimumAmount = 1f,
+            createdAt = 1L
         ),
         CryptoOffer(
             id = "2",
@@ -22,7 +23,8 @@ object OffersPreviewParameterData {
             sellAssetCode = "ETH",
             buyAssetCode = "BTC",
             maximumAmount = 20f,
-            minimumAmount = 1f
+            minimumAmount = 1f,
+            createdAt = 1L
         ),
         CryptoOffer(
             id = "3",
@@ -31,7 +33,8 @@ object OffersPreviewParameterData {
             sellAssetCode = "ETH",
             buyAssetCode = "BTC",
             maximumAmount = 20f,
-            minimumAmount = 1f
+            minimumAmount = 1f,
+            createdAt = 1L
         ),
     )
 
