@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -44,7 +45,6 @@ fun AssetComponent(
             verticalAlignment = Alignment.CenterVertically
         ) {
             SingleText(
-                modifier = Modifier.weight(1f),
                 text = JustText(
                     text = title,
                     style = MaterialTheme.typography.titleSmall,
@@ -52,8 +52,11 @@ fun AssetComponent(
                 )
             )
 
+            Spacer(modifier = Modifier.weight(1f))
+
             Box(
                 modifier = Modifier
+                    .padding(start = 12.dp)
                     .horizontalScroll(rememberScrollState())
             ) {
                 content()
