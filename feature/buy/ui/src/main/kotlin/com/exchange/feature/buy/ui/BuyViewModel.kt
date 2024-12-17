@@ -11,6 +11,8 @@ import com.exchange.feature.buy.ui.interactor.GoBackChannelEventable
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import java.math.BigDecimal
+import java.text.DecimalFormat
 import javax.inject.Inject
 
 
@@ -51,10 +53,13 @@ class BuyViewModel @Inject constructor(
     fun process(
         value: Float,
         offer: Offer,
-    ) {
+    ) = async {
         val valid = value in
                 (offer.minimum..offer.maximum)
-        val pay = (value * offer.price).toString()
+        val pay = DecimalFormat("#,###.###")
+            .format(BigDecimal(value.toString()).multiply(
+                BigDecimal(offer.price.toString())
+            ))
         this.session.value = Session(
             value = value,
             pay = pay,
