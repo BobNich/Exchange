@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="main_screen_title">Акча янчыгы</string>
+    <string name="greeting_first_sentence">Привет, %1$s!</string>
+    <string name="greeting_second_sentence">Бүген нәрсә бар?</string>
+    <string name="buy_button_text">Сатып алу</string>
+    <string name="sell_button_text">Сату</string>
+    <!-- Assets -->
+    <string name="assets_screen_title">Активлар</string>
+    <string name="show_all_assets_button_text">Барлык активларны күрсәтү</string>
+    <string name="show_less_assets_button_text">Азрак активлар күрсәтү</string>
+    <string name="no_assets_title">Акча янчыгыгыз буш!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_account">Аккаунтка күчү</string>
+    <string name="accessibility_expand_assets">Активларга күчү</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_title_start">"Керегез яки теркәлегез "</string>
+    <string name="login_title_end">Exchange</string>
+    <string name="login_username_input_hint">Кулланучы исемен языгыз</string>
+    <string name="login_password_input_hint">Серсүзне языгыз</string>
+    <string name="login_sign_in_button">Керү</string>
+    <string name="login_bottom_start">"Аккаунтыгыз юкмы? "</string>
+    <string name="login_bottom_end">Теркәлү</string>
+    <string name="login_bottom_link">Теркәлүгә күчү</string>
+    <string name="login_success_message">🎉 Уңыш! Рәхим итегез! 🚀</string>
+</resources>

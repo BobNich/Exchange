@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup_title_end">Exchange</string>
+    <string name="signup_title_start">"Аккаунтны теркәләү "</string>
+    <string name="signup_username_input_hint">Кулланучы исеме</string>
+    <string name="signup_password_input_hint">Серсүз</string>
+    <string name="signup_button_text">Теркәлү</string>
+    <string name="signup_success_message">🎉 Уңыш! Хәзер профильгә керегез!</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_back_to_login">Керүгә кире күчү</string>
+</resources>

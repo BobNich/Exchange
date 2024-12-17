@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sell_screen_name">Сату</string>
+    <string name="sell_button_text">Сату</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_to_wallet">Акча янчыгына күчү</string>
+</resources>
