@@ -12,4 +12,5 @@ dependencies {
     implementation(projects.cloud)
     implementation(projects.feature.market.domain)
     implementation(projects.core.account)
+    implementation(libs.kotlinx.datetime)
 }

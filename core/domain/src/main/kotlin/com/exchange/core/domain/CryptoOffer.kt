@@ -8,7 +8,8 @@ data class CryptoOffer(
     val sellAssetCode: String,
     val buyAssetCode: String,
     val minimumAmount: Float,
-    val maximumAmount: Float
+    val maximumAmount: Float,
+    val createdAt: Long
 ) {
     init {
         require(id.isNotEmpty()) {
