@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup_title_end">取引所</string>
+    <string name="signup_title_start">"アカウント作成 "</string>
+    <string name="signup_username_input_hint">ユーザー名</string>
+    <string name="signup_password_input_hint">パスワード</string>
+    <string name="signup_button_text">サインアップ</string>
+    <string name="signup_success_message">🎉 成功！プロフィールにログインしてください！</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_back_to_login">ログインに戻る</string>
+</resources>

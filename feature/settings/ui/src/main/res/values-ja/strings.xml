@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_name">プロフィール</string>
+    <string name="logout_setting_title">ログアウト</string>
+    <!-- Accessibility -->
+    <string name="accessibility_go_back_to_wallet">ウォレットに戻る</string>
+    <string name="accessibility_logout_icon">ログアウトアイコン</string>
+    <string name="accessibility_profile_image">プロフィール画像</string>
+</resources>
