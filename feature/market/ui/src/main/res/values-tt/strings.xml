@@ -2,7 +2,7 @@
 <resources>
     <string name="market_screen_name">Базар</string>
     <string name="offer_top_section_title">%1$s %2$s</string>
-    <string name="offer_top_section_subtitle">1 %1$s бәясе</string>
+    <string name="offer_top_section_subtitle">Бәясе 1 %1$s</string>
     <string name="buy_button_text">Сатып алу</string>
     <string name="offer_bottom_section_available_value">%1$s %2$s</string>
     <string name="offer_bottom_section_limit_title">Чикләр</string>
